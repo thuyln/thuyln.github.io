@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Super Simple Games - Unleash Your Inner Gamer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#0f1930",
+                        "primary-container": "#22b1ec",
+                        "tertiary-fixed-dim": "#eec200",
+                        "error": "#ff716c",
+                        "on-primary-fixed-variant": "#003a50",
+                        "on-error": "#490006",
+                        "error-dim": "#d7383b",
+                        "error-container": "#9f0519",
+                        "on-surface": "#dee5ff",
+                        "inverse-on-surface": "#4d556b",
+                        "inverse-surface": "#faf8ff",
+                        "secondary-fixed-dim": "#ffaeb3",
+                        "on-primary-container": "#002b3d",
+                        "tertiary": "#ffe083",
+                        "surface-tint": "#3bbffa",
+                        "on-secondary-container": "#ffebeb",
+                        "tertiary-fixed": "#fed01b",
+                        "outline-variant": "#40485d",
+                        "surface-dim": "#060e20",
+                        "surface-container-highest": "#192540",
+                        "on-surface-variant": "#a3aac4",
+                        "secondary-container": "#b50036",
+                        "surface-container-lowest": "#000000",
+                        "surface-container-low": "#091328",
+                        "on-tertiary-container": "#594700",
+                        "primary-fixed": "#2db7f2",
+                        "on-secondary-fixed": "#6f001e",
+                        "outline": "#6d758c",
+                        "primary-fixed-dim": "#05a9e3",
+                        "on-background": "#dee5ff",
+                        "on-secondary-fixed-variant": "#a40030",
+                        "secondary-dim": "#ff6f7e",
+                        "primary": "#3bbffa",
+                        "on-primary": "#00374d",
+                        "on-tertiary-fixed-variant": "#645000",
+                        "tertiary-container": "#fed01b",
+                        "surface-bright": "#1f2b49",
+                        "on-error-container": "#ffa8a3",
+                        "on-primary-fixed": "#00121d",
+                        "secondary-fixed": "#ffc2c5",
+                        "background": "#060e20",
+                        "inverse-primary": "#00668b",
+                        "on-secondary": "#490010",
+                        "tertiary-dim": "#eec200",
+                        "surface": "#060e20",
+                        "on-tertiary-fixed": "#433500",
+                        "surface-container-high": "#141f38",
+                        "on-tertiary": "#645000",
+                        "secondary": "#ff6f7e",
+                        "primary-dim": "#05a9e3",
+                        "surface-variant": "#192540"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #060e20;
+            color: #dee5ff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .font-space { font-family: 'Space Grotesk', sans-serif; }
+        .glass-panel {
+            background: rgba(25, 37, 64, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .neon-glow-primary {
+            box-shadow: 0 0 20px rgba(59, 191, 250, 0.2);
+        }
+        .neon-text-primary {
+            text-shadow: 0 0 8px rgba(59, 191, 250, 0.6);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="bg-[#060e20]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-[0_0_20px_rgba(59,191,250,0.15)]">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-3">
+<img alt="Super Simple Games Logo" class="w-10 h-10 object-contain" data-alt="vibrant abstract neon game controller icon with glowing cyan and magenta accents on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsX48M9x3JGOr63e1dgPI1M_yUDuVTOsulZTt4LCWO8Oa90mYVMahwJuvUPzyQlFdtM0Ftn035nR8QP-ReG_hpCbElY11LPxwT1bAGS6E9f0Gq_MxfHiaKDeu0XCXajx6nkUuEGUlslsyoI1gAdHYqfqt_23k9VpvwMn71O6CBVjma4v5TQ03eXYXOdOa_iCW3P452QF0lxqrxB8SRE4sXRiO8jeoOHJLud5c8exQlkxl6HFeHIrBu_2w4bXSPA8HFiGhfu_3Lmm0"/>
+<span class="text-2xl font-bold text-[#3bbffa] drop-shadow-[0_0_8px_rgba(59,191,250,0.6)] font-['Space_Grotesk'] tracking-wide uppercase">Super Simple Games</span>
+</div>
+<div class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] tracking-wide uppercase">
+<a class="text-[#3bbffa] border-b-2 border-[#3bbffa] pb-1 transition-all" href="#">Home</a>
+<a class="text-[#dee5ff] hover:text-[#3bbffa] transition-colors transition-all" href="#">Games</a>
+<a class="text-[#dee5ff] hover:text-[#3bbffa] transition-colors transition-all" href="#">Features</a>
+<a class="text-[#dee5ff] hover:text-[#3bbffa] transition-colors transition-all" href="#">Community</a>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2 rounded-xl font-bold font-['Space_Grotesk'] tracking-wider uppercase hover:scale-105 transition-transform duration-300 hover:shadow-[0_0_15px_rgba(59,191,250,0.4)] active:scale-95 brightness-110">
+                Play Now
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-[870px] flex items-center justify-center overflow-hidden px-8">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(59,191,250,0.1)_0%,_transparent_70%)]"></div>
+<div class="max-w-4xl text-center z-10">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full bg-surface-container-high border border-outline-variant/20">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-sm font-semibold text-secondary-dim font-label">NEW GAMES ADDED DAILY</span>
+</div>
+<h1 class="text-6xl md:text-8xl font-bold font-headline mb-6 tracking-tight leading-tight">
+                Unleash Your <br/>
+<span class="bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent drop-shadow-sm">Inner Gamer</span>
+</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant mb-12 font-body max-w-2xl mx-auto leading-relaxed">
+                Experience the world of Super Simple Games. <br/>Vibrant, fun, and free to play instantly in your browser.
+            </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<button class="w-full sm:w-auto bg-gradient-to-r from-primary to-primary-container text-on-primary px-10 py-4 rounded-xl font-bold text-lg font-headline transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(59,191,250,0.5)] active:scale-95">
+                    Play Now
+                </button>
+<button class="w-full sm:w-auto glass-panel border border-outline-variant/30 text-on-surface px-10 py-4 rounded-xl font-bold text-lg font-headline transition-all hover:bg-surface-container-highest">
+                    Browse Games
+                </button>
+</div>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute top-1/4 -left-20 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+<div class="absolute bottom-1/4 -right-20 w-80 h-80 bg-secondary/10 blur-[120px] rounded-full"></div>
+</header>
+<!-- Featured Games Section -->
+<section class="py-24 px-8 max-w-screen-2xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-xl">
+<h2 class="text-4xl font-bold font-headline mb-4">Trending Games</h2>
+<p class="text-on-surface-variant text-lg">Pick a challenge and start playing immediately. No accounts, no hassle.</p>
+</div>
+<div class="flex gap-4">
+<button class="p-3 rounded-full border border-outline-variant/30 text-on-surface-variant hover:text-primary hover:border-primary transition-all">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="p-3 rounded-full border border-outline-variant/30 text-on-surface-variant hover:text-primary hover:border-primary transition-all">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Bento Grid for Games -->
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-[800px] md:h-[600px]">
+<!-- Featured Large -->
+<div class="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-xl bg-surface-container-high transition-all hover:scale-[1.01]">
+<img alt="Color Switch" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" data-alt="vibrant abstract geometry and neon colors in a minimal game interface style with sharp lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx9UP29QT9m1gAY2btlZldK8ACpfYpop9apChPPi3OGFLiAgOAiSRTFfhNMEe09oMYALiBLDRvjRA8Ut7Y2kZlXkapKg1TDP1as5Miu9Wn4TuhlM48BrgyEvMi3oal2g8A9FjdEF-TpMkUcwrBo4fMPs3fFCjPDIxmFIsG7l7vSeuBZtQGZiF-A-JlhM-rO0VQXeuYvEw1mEA1ME93LR3WLPO032GouD2_eBLfqPraNgAPMi6JZOkatOpuDmIzoRQuDxZDtE4Hr_Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="absolute bottom-0 p-8 w-full">
+<div class="flex items-center gap-2 mb-3">
+<span class="px-3 py-1 rounded-full bg-secondary/20 text-secondary-dim text-xs font-bold tracking-widest uppercase">Popular</span>
+<span class="px-3 py-1 rounded-full bg-tertiary/20 text-tertiary-dim text-xs font-bold tracking-widest uppercase">Arcade</span>
+</div>
+<h3 class="text-4xl font-bold font-headline mb-4">Color Switch</h3>
+<p class="text-on-surface-variant mb-6 max-w-sm">Master the timing and match colors to survive the neon obstacles.</p>
+<button class="bg-primary text-on-primary font-bold px-6 py-3 rounded-xl transition-all hover:scale-105 active:scale-95 shadow-lg shadow-primary/20">Play Now</button>
+</div>
+</div>
+<!-- Small Game 1 -->
+<div class="md:col-span-1 group relative overflow-hidden rounded-xl bg-surface-container-high transition-all hover:scale-[1.01]">
+<img alt="Fly" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity" data-alt="neon glowing drones flying in a dark, grid-based futuristic environment with light trails" src="https://lh3.googleusercontent.com/aida/ADBb0ui6AY8qVFhfU_e9XGOzxVTZzx1a6cQ5jQ7Yoz_ZkT1t_r5gJTecANzGAW9Dv363c286Q-KUihVaeHADfq6qTSqWmjW6Jtv_7y-jWKL9vpVhWVStbLZ1qQ7V7St2_afy7IemQ9Uz9WFZNn_NhTlhp0gFfoHiEBoFnOnxpcY-7bhAtZBCVw8G8TxA_Dx5wnEahqc1mBLuMtufPDVy0m-FE7pkZcHqDyKLYzUhqw5EYfKqGBjM96-nXAFoWEQUouCQd-R9l-YPhjnw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+<div class="absolute bottom-0 p-6 w-full">
+<h3 class="text-xl font-bold font-headline mb-2">Fly</h3>
+<button class="text-primary text-sm font-bold flex items-center gap-2 group-hover:gap-3 transition-all">Play Now <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+<!-- Small Game 2 -->
+<div class="md:col-span-1 group relative overflow-hidden rounded-xl bg-surface-container-high transition-all hover:scale-[1.01]">
+<img alt="Orbit" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity" data-alt="geometric circular orbits with bright light trails in a deep dark space background high contrast digital art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgMaLJs4tYRL3vO0lN-IHFC33TQfUa8k0BrOy9_qJvyd9RMjYkoxljnXxFMQTp2S79wULIawaau6aYpKZro_Kl-yCgd2ol0V3bXYSEKPMu66OzBJ5lH1hf_jBW6cMmslWnJD9tfFFIfwWIaKdYLnSSlAYIGmLiXM4W_1qIX1RsafL2b6WKEzNEsxjaIqPoXhg6CyRZRIh0Pc_jcn4cSsfLBi8p3cuFrK-BomNuj6YRzhrjG7XJf4B4m7_BXuhQgM_itSRKNOqGzq0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+<div class="absolute bottom-0 p-6 w-full">
+<h3 class="text-xl font-bold font-headline mb-2">Orbit</h3>
+<button class="text-primary text-sm font-bold flex items-center gap-2 group-hover:gap-3 transition-all">Play Now <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+<!-- More Games Placeholder -->
+<div class="md:col-span-2 group relative overflow-hidden rounded-xl bg-surface-container-high transition-all hover:scale-[1.01]">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center mx-auto mb-4 border border-outline-variant/30">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant">grid_view</span>
+</div>
+<h3 class="text-2xl font-bold font-headline mb-1">Browse More</h3>
+<p class="text-on-surface-variant text-sm">Discover 100+ simple games</p>
+</div>
+</div>
+<div class="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors"></div>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="text-4xl md:text-5xl font-bold font-headline mb-6">Why Play Here?</h2>
+<p class="text-on-surface-variant text-lg max-w-2xl mx-auto">We've stripped away the fluff to give you the most direct path to gaming fun.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<!-- Feature 1 -->
+<div class="flex flex-col items-center text-center p-8 rounded-2xl transition-all hover:bg-surface-container-highest">
+<div class="w-16 h-16 mb-6 rounded-2xl bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-primary" data-weight="fill">bolt</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-3 uppercase tracking-wide">Simple Gameplay</h3>
+<p class="text-on-surface-variant">Easy to learn mechanics that are hard to master. Fun from the first second.</p>
+</div>
+<!-- Feature 2 -->
+<div class="flex flex-col items-center text-center p-8 rounded-2xl transition-all hover:bg-surface-container-highest">
+<div class="w-16 h-16 mb-6 rounded-2xl bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-secondary" data-weight="fill">file_download_off</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-3 uppercase tracking-wide">No Downloads</h3>
+<p class="text-on-surface-variant">Play instantly in any browser. No waiting, no storage space required.</p>
+</div>
+<!-- Feature 3 -->
+<div class="flex flex-col items-center text-center p-8 rounded-2xl transition-all hover:bg-surface-container-highest">
+<div class="w-16 h-16 mb-6 rounded-2xl bg-tertiary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-tertiary" data-weight="fill">devices</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-3 uppercase tracking-wide">Play Anywhere</h3>
+<p class="text-on-surface-variant">Seamless experience on mobile, tablet, or desktop devices.</p>
+</div>
+<!-- Feature 4 -->
+<div class="flex flex-col items-center text-center p-8 rounded-2xl transition-all hover:bg-surface-container-highest">
+<div class="w-16 h-16 mb-6 rounded-2xl bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-primary" data-weight="fill">update</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-3 uppercase tracking-wide">Daily Updates</h3>
+<p class="text-on-surface-variant">Fresh content and new game challenges added to the portal every day.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Section -->
+<section class="py-32 relative overflow-hidden">
+<div class="max-w-4xl mx-auto px-8 relative z-10">
+<div class="glass-panel border border-outline-variant/20 rounded-[2rem] p-12 md:p-20 text-center">
+<h2 class="text-4xl md:text-5xl font-bold font-headline mb-8">Join the Pulse</h2>
+<p class="text-xl text-on-surface-variant mb-12 max-w-xl mx-auto">Connect with thousands of gamers, compete in tournaments, and get early access to new releases.</p>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="flex items-center gap-3 px-8 py-4 rounded-xl bg-[#5865F2] hover:bg-[#4752C4] transition-all hover:scale-105" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-bold font-headline">Join Discord</span>
+</a>
+<a class="flex items-center gap-3 px-8 py-4 rounded-xl border border-outline-variant/30 hover:bg-surface-container-highest transition-all hover:scale-105" href="#">
+<span class="material-symbols-outlined">share</span>
+<span class="font-bold font-headline">Follow Us</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Background decorative blur -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary/10 blur-[150px] rounded-full pointer-events-none"></div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#060e20] full-width border-t border-[#141f38]">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12 w-full px-12 py-16 max-w-screen-2xl mx-auto">
+<div class="max-w-sm">
+<div class="flex items-center gap-3 mb-6">
+<img alt="Super Simple Games Logo" class="w-8 h-8 object-contain" data-alt="vibrant abstract neon game controller icon with glowing cyan and magenta accents on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvaj6vIKqzYAEaHH8SjxVE-LXdxg6vV3RM9-Tb1Th_dD2Sm6tU2CAfUFa3QgCg6xRkQJSgvPdobWARVK6aRl1FBk5g-xKz2iP94SHPs87fYsRuuEMnobzNBWNmH_AAiX0YS_afhKk1Kut9wSKk5NPKfWTY8s8twWLtr2D5zBDt6rYkLRUrftGeV_tnqmjTs9vHODi2bh293EYi8czEzHchiOdSyndLOqPg1cvoHuvYpByeG2rfHwlzKZ9YOO9Qe3oqfbmxkuv1stA"/>
+<span class="text-xl font-bold text-[#3bbffa]">Super Simple Games</span>
+</div>
+<p class="text-[#dee5ff]/70 font-['Plus_Jakarta_Sans'] text-sm leading-relaxed">
+                    The ultimate destination for instant, free-to-play web games. Powered by high-octane performance and pure fun.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-12">
+<div class="flex flex-col gap-4">
+<h4 class="text-[#3bbffa] font-bold font-headline uppercase tracking-widest text-xs">Navigation</h4>
+<a class="text-[#dee5ff]/60 hover:text-[#ffe083] transition-colors duration-200 text-sm" href="#">Home</a>
+<a class="text-[#dee5ff]/60 hover:text-[#ffe083] transition-colors duration-200 text-sm" href="#">Games</a>
+<a class="text-[#dee5ff]/60 hover:text-[#ffe083] transition-colors duration-200 text-sm" href="#">Features</a>
+<a class="text-[#dee5ff]/60 hover:text-[#ffe083] transition-colors duration-200 text-sm" href="#">Community</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-[#ff6f7e] font-bold font-headline uppercase tracking-widest text-xs">Information</h4>
+<a class="text-[#dee5ff]/60 hover:text-[#ffe083] transition-colors duration-200 text-sm" href="#">Support</a>
+<a class="text-[#dee5ff]/60 hover:text-[#ffe083] transition-colors duration-200 text-sm" href="#">Legal</a>
+<a class="text-[#dee5ff]/60 hover:text-[#ffe083] transition-colors duration-200 text-sm" href="#">Privacy Policy</a>
+<a class="text-[#dee5ff]/60 hover:text-[#ffe083] transition-colors duration-200 text-sm" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="w-full md:w-auto">
+<h4 class="text-[#ffe083] font-bold font-headline uppercase tracking-widest text-xs mb-6">Stay Updated</h4>
+<div class="flex bg-surface-container-highest p-1 rounded-xl border border-outline-variant/20">
+<input class="bg-transparent border-none focus:ring-0 text-sm px-4 py-2 w-full md:w-48 placeholder:text-on-surface-variant/50" placeholder="Your email" type="email"/>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-tight hover:brightness-110">Sub</button>
+</div>
+</div>
+</div>
+<div class="w-full px-12 py-8 border-t border-[#141f38] flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-['Plus_Jakarta_Sans'] text-sm text-[#dee5ff]/70">© 2024 Super Simple Games. All Rights Reserved.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-[#dee5ff]/40 hover:text-primary transition-colors cursor-pointer">public</span>
+<span class="material-symbols-outlined text-[#dee5ff]/40 hover:text-secondary transition-colors cursor-pointer">sports_esports</span>
+<span class="material-symbols-outlined text-[#dee5ff]/40 hover:text-tertiary transition-colors cursor-pointer">chat</span>
+</div>
+</div>
+</footer>
+</body></html>
