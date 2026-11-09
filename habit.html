@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GradiHabit: Habit Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #006B5F;
+            --bg-color: #F8F9FA;
+            --text-main: #2D3748;
+            --text-muted: #718096;
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header / Hero Section */
+        header {
+            text-align: center;
+            padding: 80px 20px 60px;
+            background: linear-gradient(135deg, #E6F3F1 0%, #FFFFFF 100%);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .hero-desc {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--text-main);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* Screenshots Section */
+        .screenshots {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .screenshots-scroll {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            scroll-snap-type: x mandatory;
+        }
+
+        .screenshots-scroll img {
+            height: 500px;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            scroll-snap-align: center;
+        }
+
+        /* Target Audience Section */
+        .audience {
+            padding: 60px 0;
+        }
+        
+        .audience ul {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .audience li {
+            background: var(--card-bg);
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        /* Support Section */
+        .support {
+            padding: 60px 0;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+        }
+
+        .support h2 {
+            margin-bottom: 20px;
+        }
+
+        .support p {
+            max-width: 700px;
+            margin: 0 auto 20px;
+            opacity: 0.9;
+        }
+
+        .support a {
+            color: white;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #1A202C;
+            color: #A0AEC0;
+            font-size: 0.9rem;
+        }
+
+        /* Custom Scrollbar for screenshots */
+        .screenshots-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+        .screenshots-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+            border-radius: 4px;
+        }
+        .screenshots-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e0; 
+            border-radius: 4px;
+        }
+        .screenshots-scroll::-webkit-scrollbar-thumb:hover {
+            background: #a0aec0; 
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .screenshots-scroll img { height: 400px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>GradiHabit</h1>
+            <div class="tagline">Small steps. Big changes.</div>
+            <p class="hero-desc">
+                A minimalist, 100% offline-first habit tracker that helps you build a better lifestyle based on behavioral science. 
+                Stay perfectly focused with our core rule: <strong>Track a maximum of 5 habits at a time.</strong>
+            </p>
+            <div class="badges">
+                <a href="#" class="btn btn-primary">Download on the App Store</a>
+                <a href="#" class="btn">Get it on Google Play</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🎯 The Power of Focus</h3>
+                    <p>Limit your tracking to a maximum of 5 habits at once to avoid overwhelm and achieve the highest possible success rate.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📚 Science-Based Library</h3>
+                    <p>Includes 18 pre-built habits. Each habit comes with a detailed explanation of its benefits, scientific background, and step-by-step guidance following the 2-minute rule.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🌱 "Shrink It" Fallback</h3>
+                    <p>If you miss 3 days, the app suggests "shrinking" the habit into a tiny version (e.g., a 1-minute breathing exercise) to keep your streak alive without the pressure.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📝 Daily Review & Journal</h3>
+                    <p>At the end of the day, review your habits, adjust tracking times, rate your performance 1-5 stars, and write a micro-journal entry about your feelings.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 Visual Insights</h3>
+                    <p>Track your progress through a comprehensive dashboard featuring completion rates, GitHub-style heatmaps, and a radar chart analyzing the quality of each habit.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔒 Ultimate Privacy</h3>
+                    <p>100% offline. All data is stored strictly on your device. Supports Light/Dark mode, 60 languages, and secure encrypted data backup.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="screenshots">
+        <div class="container">
+            <h2 class="section-title">Modern & Intuitive Interface</h2>
+            <div class="screenshots-scroll">
+                <img src="01_today.png" alt="Today Screen">
+                <img src="07_today_dark.png" alt="Today Screen Dark Mode">
+                <img src="02_library.jpg" alt="Habit Library">
+                <img src="03_habit_detail.png" alt="Habit Details">
+                <img src="06_daily_review.png" alt="Daily Review">
+                <img src="04_insights.png" alt="Insights">
+                <img src="05_insights_charts.png" alt="Insights Charts">
+            </div>
+        </div>
+    </section>
+
+    <section class="audience">
+        <div class="container">
+            <h2 class="section-title">Who is GradiHabit for?</h2>
+            <ul>
+                <li><strong>The Restarter:</strong> Have you tried building habits only to give up? GradiHabit's tiny steps and "shrink it" fallback feature will ensure you never feel discouraged again.</li>
+                <li><strong>The Optimizer:</strong> Love the numbers? The heatmaps, radar charts, and streak counters will be the perfect motivation for your daily routine.</li>
+                <li><strong>The Busy Professional:</strong> It takes exactly 10 seconds a day to open the app, swipe to confirm, and get back to your life.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="support" id="support">
+        <div class="container">
+            <h2>Support & Contact</h2>
+            <p>We are always here to listen and support you on your self-improvement journey. If you encounter any issues, have questions, or want to share feedback to improve the app, please reach out to us:</p>
+            <p>Email: <a href="mailto:isteam.vn@outlook.com">isteam.vn@outlook.com</a></p>
+            <br>
+            <h3>Privacy Policy</h3>
+            <p style="margin-top: 10px; font-size: 0.95rem;">GradiHabit is a 100% offline application. We deeply respect your privacy. None of your personal data or habit history is collected, tracked, or sent to any servers. Everything belongs to you and stays safely on your device.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 GradiHabit. All rights reserved.</p>
+            <p style="margin-top: 5px; opacity: 0.7;">Developed by T-Media</p>
+        </div>
+    </footer>
+
+</body>
+</html>
